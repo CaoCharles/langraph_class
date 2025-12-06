@@ -1,0 +1,103 @@
+site_name: LangGraph 學習指南
+site_description: 從零開始學習 LangGraph Agent 開發
+site_author: Charles Cao
+site_url: ""
+
+theme:
+  name: material
+  language: zh-TW
+  palette:
+    - scheme: slate
+      primary: custom
+      accent: light-blue
+      toggle:
+        icon: material/brightness-4
+        name: 切換至亮色模式
+    - scheme: default
+      primary: custom
+      accent: light-blue
+      toggle:
+        icon: material/brightness-7
+        name: 切換至暗色模式
+  font:
+    text: Noto Sans TC
+    code: Fira Code
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+  icon:
+    logo: material/robot
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search:
+      lang: 
+        - zh
+        - en
+  - mkdocs-jupyter:
+      include_source: true
+      execute: false
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 3
+
+nav:
+  - 首頁: index.md
+  - 學習指南: LangGraph_學習指南.md
+  - 實作練習:
+      - 基礎篇:
+          - 01. 環境設定: notebooks/01_setup.ipynb
+          - 02. 第一個 Graph: notebooks/02_first_graph.ipynb
+          - 03. 狀態管理: notebooks/03_state_management.ipynb
+      - Agent 篇:
+          - 04. ReAct Agent: notebooks/04_react_agent.ipynb
+          - 05. Tool 整合: notebooks/05_tools.ipynb
+          - 06. 條件路由: notebooks/06_conditional_routing.ipynb
+      - 進階篇:
+          - 07. 記憶體與持久化: notebooks/07_memory.ipynb
+          - 08. 人機協作: notebooks/08_human_in_loop.ipynb
+          - 09. 多 Agent 系統: notebooks/09_multi_agent.ipynb
+      - 高階篇:
+          - 10. 錯誤處理: notebooks/10_error_handling.ipynb
+          - 11. 串流輸出: notebooks/11_streaming.ipynb
+          - 12. 子圖設計: notebooks/12_subgraphs.ipynb
+          - 13. 最佳實踐: notebooks/13_best_practices.ipynb
+      - RAG Agent:
+          - 14. RAG 基礎版: notebooks/14_rag_agent_basic.ipynb
+          - 15. RAG 進階版: notebooks/15_rag_agent_advanced.ipynb
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/CaoCharles
+
+copyright: Copyright &copy; 2024 Charles Cao
+

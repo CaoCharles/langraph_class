@@ -1,0 +1,24 @@
+/* 深藍色主題 */
+:root {
+  --md-primary-fg-color: #0d47a1;        /* 深藍色 */
+  --md-primary-fg-color--light: #1565c0;
+  --md-primary-fg-color--dark: #0a3d91;
+  --md-accent-fg-color: #42a5f5;         /* 淺藍強調色 */
+}
+
+/* Slate 模式 (暗色) */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #1a237e;        /* 更深的藍色 */
+  --md-primary-fg-color--light: #283593;
+  --md-primary-fg-color--dark: #0d1b5e;
+}
+
+/* 頂端導覽列漸層效果 */
+.md-header {
+  background: linear-gradient(135deg, #0d47a1 0%, #1a237e 100%);
+}
+
+/* 導覽列標籤 hover 效果 */
+.md-tabs {
+  background: linear-gradient(135deg, #1565c0 0%, #283593 100%);
+}
