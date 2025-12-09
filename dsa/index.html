@@ -6,33 +6,35 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="從零開始學習 LangGraph Agent 開發">
+        <meta name="description" content="系統性學習資料結構與演算法，為 Google、Microsoft、Amazon、Meta 技術面試做好準備">
       
       
         <meta name="author" content="Charles Cao">
       
       
       
+        <link rel="prev" href="../notebooks/15_rag_agent_advanced/">
       
-        <link rel="next" href="LangGraph_%E5%AD%B8%E7%BF%92%E6%8C%87%E5%8D%97/">
+      
+        <link rel="next" href="chapter_01_complexity/">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>LangGraph 學習指南</title>
+        <title>資料結構與演算法 - FAANG 面試準備課程 - LangGraph 學習指南</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#langgraph" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳轉到
         </a>
       
@@ -92,7 +94,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="頁首">
-    <a href="." title="LangGraph 學習指南" class="md-header__button md-logo" aria-label="LangGraph 學習指南" data-md-component="logo">
+    <a href=".." title="LangGraph 學習指南" class="md-header__button md-logo" aria-label="LangGraph 學習指南" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"/></svg>
@@ -112,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              首頁
+              資料結構與演算法 - FAANG 面試準備課程
             
           </span>
         </div>
@@ -214,11 +216,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
         
   
   
@@ -237,7 +237,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="LangGraph_%E5%AD%B8%E7%BF%92%E6%8C%87%E5%8D%97/" class="md-tabs__link">
+      <a href="../LangGraph_%E5%AD%B8%E7%BF%92%E6%8C%87%E5%8D%97/" class="md-tabs__link">
         
   
   
@@ -265,7 +265,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="notebooks/01_setup/" class="md-tabs__link">
+        <a href="../notebooks/01_setup/" class="md-tabs__link">
           
   
   
@@ -284,11 +284,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="dsa/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -322,7 +324,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="LangGraph 學習指南" class="md-nav__button md-logo" aria-label="LangGraph 學習指南" data-md-component="logo">
+    <a href=".." title="LangGraph 學習指南" class="md-nav__button md-logo" aria-label="LangGraph 學習指南" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"/></svg>
@@ -337,37 +339,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    首頁
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -383,87 +358,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目錄">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目錄
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📚 課程內容
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🛠️ 環境需求
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🚀 快速開始
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📖 學習路徑
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📖 學習路徑">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        建議學習方式
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -475,7 +369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="LangGraph_%E5%AD%B8%E7%BF%92%E6%8C%87%E5%8D%97/" class="md-nav__link">
+      <a href="../LangGraph_%E5%AD%B8%E7%BF%92%E6%8C%87%E5%8D%97/" class="md-nav__link">
         
   
   
@@ -610,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notebooks/01_setup/" class="md-nav__link">
+      <a href="../notebooks/01_setup/" class="md-nav__link">
         
   
   
@@ -638,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notebooks/02_first_graph/" class="md-nav__link">
+      <a href="../notebooks/02_first_graph/" class="md-nav__link">
         
   
   
@@ -666,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notebooks/03_state_management/" class="md-nav__link">
+      <a href="../notebooks/03_state_management/" class="md-nav__link">
         
   
   
@@ -756,7 +650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notebooks/04_react_agent/" class="md-nav__link">
+      <a href="../notebooks/04_react_agent/" class="md-nav__link">
         
   
   
@@ -784,7 +678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notebooks/05_tools/" class="md-nav__link">
+      <a href="../notebooks/05_tools/" class="md-nav__link">
         
   
   
@@ -812,7 +706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notebooks/06_conditional_routing/" class="md-nav__link">
+      <a href="../notebooks/06_conditional_routing/" class="md-nav__link">
         
   
   
@@ -902,7 +796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notebooks/07_memory/" class="md-nav__link">
+      <a href="../notebooks/07_memory/" class="md-nav__link">
         
   
   
@@ -930,7 +824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notebooks/08_human_in_loop/" class="md-nav__link">
+      <a href="../notebooks/08_human_in_loop/" class="md-nav__link">
         
   
   
@@ -958,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notebooks/09_multi_agent/" class="md-nav__link">
+      <a href="../notebooks/09_multi_agent/" class="md-nav__link">
         
   
   
@@ -1048,7 +942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notebooks/10_error_handling/" class="md-nav__link">
+      <a href="../notebooks/10_error_handling/" class="md-nav__link">
         
   
   
@@ -1076,7 +970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notebooks/11_streaming/" class="md-nav__link">
+      <a href="../notebooks/11_streaming/" class="md-nav__link">
         
   
   
@@ -1104,7 +998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notebooks/12_subgraphs/" class="md-nav__link">
+      <a href="../notebooks/12_subgraphs/" class="md-nav__link">
         
   
   
@@ -1132,7 +1026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notebooks/13_best_practices/" class="md-nav__link">
+      <a href="../notebooks/13_best_practices/" class="md-nav__link">
         
   
   
@@ -1222,7 +1116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notebooks/14_rag_agent_basic/" class="md-nav__link">
+      <a href="../notebooks/14_rag_agent_basic/" class="md-nav__link">
         
   
   
@@ -1250,7 +1144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notebooks/15_rag_agent_advanced/" class="md-nav__link">
+      <a href="../notebooks/15_rag_agent_advanced/" class="md-nav__link">
         
   
   
@@ -1290,28 +1184,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   
@@ -1329,7 +1226,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1344,10 +1241,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="dsa/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    課程介紹
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1363,6 +1287,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📚 課程大綱
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 基礎篇
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔥 進階資料結構
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 演算法篇
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 學習建議
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱️ 時間規劃
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1381,10 +1391,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1393,7 +1406,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
             
   
   
@@ -1429,7 +1442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dsa/chapter_01_complexity/" class="md-nav__link">
+      <a href="chapter_01_complexity/" class="md-nav__link">
         
   
   
@@ -1457,7 +1470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dsa/chapter_02_array_string/" class="md-nav__link">
+      <a href="chapter_02_array_string/" class="md-nav__link">
         
   
   
@@ -1485,7 +1498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dsa/chapter_03_linked_list/" class="md-nav__link">
+      <a href="chapter_03_linked_list/" class="md-nav__link">
         
   
   
@@ -1513,7 +1526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dsa/chapter_04_stack_queue/" class="md-nav__link">
+      <a href="chapter_04_stack_queue/" class="md-nav__link">
         
   
   
@@ -1555,10 +1568,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1567,7 +1583,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
             
   
   
@@ -1603,7 +1619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dsa/chapter_05_hash_table/" class="md-nav__link">
+      <a href="chapter_05_hash_table/" class="md-nav__link">
         
   
   
@@ -1631,7 +1647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dsa/chapter_06_tree/" class="md-nav__link">
+      <a href="chapter_06_tree/" class="md-nav__link">
         
   
   
@@ -1659,7 +1675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dsa/chapter_07_bst/" class="md-nav__link">
+      <a href="chapter_07_bst/" class="md-nav__link">
         
   
   
@@ -1687,7 +1703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dsa/chapter_08_heap/" class="md-nav__link">
+      <a href="chapter_08_heap/" class="md-nav__link">
         
   
   
@@ -1715,7 +1731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dsa/chapter_09_graph/" class="md-nav__link">
+      <a href="chapter_09_graph/" class="md-nav__link">
         
   
   
@@ -1757,10 +1773,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1769,7 +1788,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
         
           
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
             
   
   
@@ -1805,7 +1824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dsa/chapter_10_sorting/" class="md-nav__link">
+      <a href="chapter_10_sorting/" class="md-nav__link">
         
   
   
@@ -1833,7 +1852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dsa/chapter_11_binary_search/" class="md-nav__link">
+      <a href="chapter_11_binary_search/" class="md-nav__link">
         
   
   
@@ -1861,7 +1880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dsa/chapter_12_recursion_backtracking/" class="md-nav__link">
+      <a href="chapter_12_recursion_backtracking/" class="md-nav__link">
         
   
   
@@ -1889,7 +1908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dsa/chapter_13_dynamic_programming/" class="md-nav__link">
+      <a href="chapter_13_dynamic_programming/" class="md-nav__link">
         
   
   
@@ -1917,7 +1936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="dsa/chapter_14_greedy/" class="md-nav__link">
+      <a href="chapter_14_greedy/" class="md-nav__link">
         
   
   
@@ -1980,21 +1999,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📚 課程內容
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🛠️ 環境需求
+        📚 課程大綱
       
     </span>
   </a>
@@ -2005,7 +2013,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🚀 快速開始
+        🚀 基礎篇
       
     </span>
   </a>
@@ -2016,27 +2024,43 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📖 學習路徑
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📖 學習路徑">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        建議學習方式
+        🔥 進階資料結構
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💡 演算法篇
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎓 學習建議
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏱️ 時間規劃
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2057,76 +2081,228 @@
 
 
 
-<h1 id="langgraph">🚀 LangGraph 學習指南<a class="headerlink" href="#langgraph" title="Permanent link">&para;</a></h1>
-<p>歡迎來到 <strong>LangGraph 學習指南</strong>！這是一個完整的互動式學習平台，幫助您從零開始掌握 LangGraph Agent 開發。</p>
-<h2 id="_1">📚 課程內容<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>本課程共 <strong>13 個章節</strong>，涵蓋以下主題：</p>
+<h1 id="_1">資料結構與演算法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<div class="admonition success">
+<p class="admonition-title">🎯 課程目標</p>
+<p>本課程專為準備 <strong>FAANG（Google、Microsoft、Amazon、Meta）技術面試</strong>的工程師設計。
+透過系統性的學習，你將掌握面試必考的資料結構與演算法核心知識。</p>
+</div>
+<h2 id="_2">📚 課程大綱<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>graph LR
+    subgraph 基礎篇
+        A1["1. 複雜度分析"]
+        A2["2. Array &amp; String"]
+        A3["3. Linked List"]
+        A4["4. Stack &amp; Queue"]
+    end
+
+    subgraph 進階資料結構
+        B1["5. Hash Table"]
+        B2["6. Tree"]
+        B3["7. BST"]
+        B4["8. Heap"]
+        B5["9. Graph"]
+    end
+
+    subgraph 演算法篇
+        C1["10. 排序"]
+        C2["11. Binary Search"]
+        C3["12. Backtracking"]
+        C4["13. DP"]
+        C5["14. Greedy"]
+    end
+
+    A1 --&gt; A2 --&gt; A3 --&gt; A4 --&gt; B1
+    B1 --&gt; B2 --&gt; B3 --&gt; B4 --&gt; B5
+    B5 --&gt; C1 --&gt; C2 --&gt; C3 --&gt; C4 --&gt; C5</code></pre>
+<hr />
+<h2 id="_3">🚀 基礎篇<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>建立紮實的資料結構基礎，理解時間與空間複雜度分析。</p>
 <table>
 <thead>
 <tr>
-<th>分類</th>
 <th>章節</th>
-<th>難度</th>
+<th>主題</th>
+<th>重點</th>
+<th>預估時間</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>基礎篇</strong></td>
-<td>環境設定、第一個 Graph、狀態管理</td>
-<td>⭐</td>
+<td><a href="chapter_01_complexity/">第 1 章</a></td>
+<td>複雜度分析</td>
+<td>Big O、時間/空間複雜度</td>
+<td>2 小時</td>
 </tr>
 <tr>
-<td><strong>Agent 篇</strong></td>
-<td>ReAct Agent、Tool 整合、條件路由</td>
-<td>⭐⭐</td>
+<td><a href="chapter_02_array_string/">第 2 章</a></td>
+<td>Array 與 String</td>
+<td>雙指標、滑動窗口</td>
+<td>3 小時</td>
 </tr>
 <tr>
-<td><strong>進階篇</strong></td>
-<td>記憶體持久化、人機協作、多 Agent 系統</td>
-<td>⭐⭐⭐</td>
+<td><a href="chapter_03_linked_list/">第 3 章</a></td>
+<td>Linked List</td>
+<td>快慢指標、反轉技巧</td>
+<td>2.5 小時</td>
 </tr>
 <tr>
-<td><strong>高階篇</strong></td>
-<td>錯誤處理、串流輸出、子圖設計、最佳實踐</td>
-<td>⭐⭐⭐⭐</td>
+<td><a href="chapter_04_stack_queue/">第 4 章</a></td>
+<td>Stack 與 Queue</td>
+<td>單調棧、BFS 應用</td>
+<td>2.5 小時</td>
 </tr>
 </tbody>
 </table>
-<h2 id="_2">🛠️ 環境需求<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Python 3.12+</li>
-<li>OpenAI API Key（或其他 LLM 提供者）</li>
-</ul>
-<h2 id="_3">🚀 快速開始<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 設定 API Key</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cp<span class="w"> </span>.env.example<span class="w"> </span>.env
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># 編輯 .env 填入您的 API Key</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># 啟動 Jupyter Lab</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>uv<span class="w"> </span>run<span class="w"> </span>jupyter<span class="w"> </span>lab
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># 啟動 MkDocs 開發伺服器</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>uv<span class="w"> </span>run<span class="w"> </span>mkdocs<span class="w"> </span>serve
-</span></code></pre></div>
-<h2 id="_4">📖 學習路徑<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>graph LR
-    A[基礎篇] --&gt; B[Agent 篇]
-    B --&gt; C[進階篇]
-    C --&gt; D[高階篇]</code></pre>
-<h3 id="_5">建議學習方式<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<ol>
-<li>📖 先閱讀 <a href="LangGraph_%E5%AD%B8%E7%BF%92%E6%8C%87%E5%8D%97/">學習指南</a> 了解概念</li>
-<li>💻 依序完成實作練習的 Jupyter Notebook</li>
-<li>🔄 反覆練習，建立自己的專案</li>
-</ol>
 <hr />
-<p><strong>祝學習愉快！</strong> 🎉</p>
+<h2 id="_4">🔥 進階資料結構<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>深入理解面試高頻資料結構，掌握各種操作的實作與應用。</p>
+<table>
+<thead>
+<tr>
+<th>章節</th>
+<th>主題</th>
+<th>重點</th>
+<th>預估時間</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="chapter_05_hash_table/">第 5 章</a></td>
+<td>Hash Table</td>
+<td>O(1) 查找、碰撞處理</td>
+<td>3 小時</td>
+</tr>
+<tr>
+<td><a href="chapter_06_tree/">第 6 章</a></td>
+<td>Tree 與 Binary Tree</td>
+<td>遍歷方式、遞迴思維</td>
+<td>3 小時</td>
+</tr>
+<tr>
+<td><a href="chapter_07_bst/">第 7 章</a></td>
+<td>Binary Search Tree</td>
+<td>BST 性質、平衡樹概念</td>
+<td>2.5 小時</td>
+</tr>
+<tr>
+<td><a href="chapter_08_heap/">第 8 章</a></td>
+<td>Heap 與 Priority Queue</td>
+<td>Heapify、Top K 問題</td>
+<td>2.5 小時</td>
+</tr>
+<tr>
+<td><a href="chapter_09_graph/">第 9 章</a></td>
+<td>Graph</td>
+<td>BFS/DFS、拓撲排序</td>
+<td>4 小時</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_5">💡 演算法篇<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>掌握經典演算法思維，解決複雜的面試問題。</p>
+<table>
+<thead>
+<tr>
+<th>章節</th>
+<th>主題</th>
+<th>重點</th>
+<th>預估時間</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="chapter_10_sorting/">第 10 章</a></td>
+<td>排序演算法</td>
+<td>Quick Sort、Merge Sort</td>
+<td>3 小時</td>
+</tr>
+<tr>
+<td><a href="chapter_11_binary_search/">第 11 章</a></td>
+<td>Binary Search</td>
+<td>邊界處理、變體應用</td>
+<td>2.5 小時</td>
+</tr>
+<tr>
+<td><a href="chapter_12_recursion_backtracking/">第 12 章</a></td>
+<td>Recursion &amp; Backtracking</td>
+<td>回溯框架、剪枝優化</td>
+<td>3.5 小時</td>
+</tr>
+<tr>
+<td><a href="chapter_13_dynamic_programming/">第 13 章</a></td>
+<td>Dynamic Programming</td>
+<td>狀態轉移、經典模式</td>
+<td>5 小時</td>
+</tr>
+<tr>
+<td><a href="chapter_14_greedy/">第 14 章</a></td>
+<td>Greedy Algorithm</td>
+<td>貪婪策略、正確性證明</td>
+<td>2.5 小時</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_6">🎓 學習建議<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">高效學習策略</p>
+<ol>
+<li><strong>按順序學習</strong>：每章內容都建立在前面章節的基礎上</li>
+<li><strong>動手實作</strong>：親自打一遍程式碼，不要只看不練</li>
+<li><strong>練習題必做</strong>：每章的 3 道練習題是精選的面試經典題</li>
+<li><strong>複習複雜度</strong>：每個解法都要能分析時間和空間複雜度</li>
+</ol>
+</div>
+<div class="admonition info">
+<p class="admonition-title">各公司面試風格</p>
+<ul>
+<li><strong>Google</strong>：強調複雜度優化，會追問「還能更快嗎？」</li>
+<li><strong>Microsoft</strong>：實際應用情境，可能問系統設計相關</li>
+<li><strong>Amazon</strong>：Scalability 考量，注重程式碼品質</li>
+<li><strong>Meta</strong>：實作完整度，會要求處理邊界情況</li>
+</ul>
+</div>
+<hr />
+<h2 id="_7">⏱️ 時間規劃<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>學習模式</th>
+<th>建議時程</th>
+<th>每日時間</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>密集準備</td>
+<td>4 週</td>
+<td>3-4 小時/天</td>
+</tr>
+<tr>
+<td>穩紮穩打</td>
+<td>8 週</td>
+<td>1.5-2 小時/天</td>
+</tr>
+<tr>
+<td>週末學習</td>
+<td>12 週</td>
+<td>4-5 小時/週末</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>開始你的學習之旅吧！</strong> 👉 <a href="chapter_01_complexity/">第 1 章：複雜度分析</a></p>
 
 
 
 
 
 
+
+  
+  
 
 
 
@@ -2196,10 +2372,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
     
   </body>
