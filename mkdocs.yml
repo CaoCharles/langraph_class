@@ -93,6 +93,25 @@ nav:
       - RAG Agent:
           - 14. RAG 基礎版: notebooks/14_rag_agent_basic.ipynb
           - 15. RAG 進階版: notebooks/15_rag_agent_advanced.ipynb
+  - 資料結構與演算法:
+      - 課程介紹: dsa/index.md
+      - 基礎篇:
+          - 01. 複雜度分析: dsa/chapter_01_complexity.md
+          - 02. Array 與 String: dsa/chapter_02_array_string.md
+          - 03. Linked List: dsa/chapter_03_linked_list.md
+          - 04. Stack 與 Queue: dsa/chapter_04_stack_queue.md
+      - 進階資料結構:
+          - 05. Hash Table: dsa/chapter_05_hash_table.md
+          - 06. Tree 與 Binary Tree: dsa/chapter_06_tree.md
+          - 07. Binary Search Tree: dsa/chapter_07_bst.md
+          - 08. Heap 與 Priority Queue: dsa/chapter_08_heap.md
+          - 09. Graph: dsa/chapter_09_graph.md
+      - 演算法篇:
+          - 10. 排序演算法: dsa/chapter_10_sorting.md
+          - 11. Binary Search: dsa/chapter_11_binary_search.md
+          - 12. Recursion & Backtracking: dsa/chapter_12_recursion_backtracking.md
+          - 13. Dynamic Programming: dsa/chapter_13_dynamic_programming.md
+          - 14. Greedy Algorithm: dsa/chapter_14_greedy.md
 
 extra:
   social:
